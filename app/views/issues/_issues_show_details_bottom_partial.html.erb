@@ -1,4 +1,8 @@
 <%= content_for :header_tags do
   javascript_include_tag("diff_popup", :plugin => "redmine_diff_popup")
 end %>
-<div>GERO's Script</div>
+<script>
+  $(function () {
+    replaceJournalDiff();
+  });
+</script>
