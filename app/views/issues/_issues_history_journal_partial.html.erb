@@ -1,0 +1,9 @@
+<% if journal.details.any? %>
+<ul class="details">
+  <% journal.visible_details.each do |detail| %>
+    <% if is_show_diff_detail?(detail) %>
+    <li><%= show_detail_diff_popup(detail) %></li>
+    <% end %>
+  <% end %>
+</ul>
+<% end %>
