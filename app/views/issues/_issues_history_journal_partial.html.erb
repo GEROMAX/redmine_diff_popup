@@ -2,7 +2,7 @@
 <ul class="details">
   <% journal.visible_details.each do |detail| %>
     <% if is_show_diff_detail?(detail) %>
-    <li><%= show_detail_diff_popup(detail) %></li>
+    <li><%= show_detail_diff_popup(detail, journal.indice) %></li>
     <% end %>
   <% end %>
 </ul>

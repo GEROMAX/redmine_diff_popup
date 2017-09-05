@@ -21,12 +21,12 @@ module DiffPopupHelperPatch
         return false
       end
       
-      def show_detail_diff_popup(detail)
+      def show_detail_diff_popup(detail, indice)
         label = detail.prop_key == 'description' ? l(:field_description) : detail.custom_field.name
         label = content_tag('strong', label)
         s = l(:text_journal_changed_no_detail, :label => label)
         diff_link = link_to 'diff',
-          diff_popup_journal_diff_url(:id => detail.journal_id, :detail_id => detail.id),
+          diff_popup_journal_diff_url(:id => detail.journal_id, :detail_id => detail.id, :indice => indice),
           :title => l(:label_view_diff)
         s << " (#{ diff_link })"
         s.html_safe
