@@ -1,6 +1,6 @@
-require_dependency 'hooks/diff_popup_hook'
-require_dependency 'patches/issues_helper_patch'
-require_dependency 'patches/user_preference_patch'
+require_dependency 'redmine_diff_popup/hooks/diff_popup_hook'
+require_dependency 'redmine_diff_popup/patches/issues_helper_patch'
+require_dependency 'redmine_diff_popup/patches/user_preference_patch'
 
 
 ActionDispatch::Callbacks.to_prepare do
