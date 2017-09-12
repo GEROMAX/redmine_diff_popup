@@ -1,11 +1,15 @@
-require_dependency 'diff_popup_hook'
-require_dependency 'diff_popup_helper_patch'
+require_dependency 'hooks/diff_popup_hook'
+require_dependency 'patches/issues_helper_patch'
 require_dependency 'patches/user_preference_patch'
 
 
 ActionDispatch::Callbacks.to_prepare do
   unless UserPreference.included_modules.include?(RedmineDiffPopup::Patches::UserPreferencePatch)
     UserPreference.send :prepend, RedmineDiffPopup::Patches::UserPreferencePatch
+  end
+  
+  unless IssuesHelper.included_modules.include?(RedmineDiffPopup::Patches::IssuesHelperPatch)
+    IssuesHelper.send :prepend, RedmineDiffPopup::Patches::IssuesHelperPatch
   end
 end
 

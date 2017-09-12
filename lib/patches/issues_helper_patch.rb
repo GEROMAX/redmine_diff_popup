@@ -1,10 +1,10 @@
 require_dependency("issues_helper")
 
-module DiffPopupHelperPatch
-  def self.included(base)
-    base.send(:include, InstanceMethod)
+module RedmineDiffPopup
+  module Patches
+    module IssuesHelperPatch
+      extend ActiveSupport::Concern
 
-    base.class_eval do
       # add method to IssuesHelper
       def is_show_diff_detail?(detail)
         case detail.property
@@ -20,7 +20,7 @@ module DiffPopupHelperPatch
         end
         return false
       end
-      
+
       def show_detail_diff_popup(detail, indice)
         label = detail.prop_key == 'description' ? l(:field_description) : detail.custom_field.name
         label = content_tag('strong', label)
@@ -37,10 +37,4 @@ module DiffPopupHelperPatch
 
     end
   end
-
-  module InstanceMethod
-  end
 end
-
-# include this module to IssuesHelper
-IssuesHelper.send(:include, DiffPopupHelperPatch)
