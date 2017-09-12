@@ -1,3 +1,4 @@
+<% if User.current.pref[:enable_popup_journal_diff] == '1' %>
 <%= content_for :header_tags do
   javascript_include_tag("diff_popup", :plugin => "redmine_diff_popup")
 end %>
@@ -6,3 +7,4 @@ end %>
     replaceJournalDiff();
   });
 </script>
+<% end %>

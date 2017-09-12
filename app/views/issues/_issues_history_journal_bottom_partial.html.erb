@@ -1,4 +1,4 @@
-<% if journal.details.any? %>
+<% if journal.details.any? && User.current.pref[:enable_popup_journal_diff] == '1' %>
 <% journal.visible_details.each do |detail| %>
   <% if is_show_diff_detail?(detail) %>
   <li><%= show_detail_diff_popup(detail, journal.indice) %></li>
