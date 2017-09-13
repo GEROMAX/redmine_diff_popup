@@ -25,12 +25,12 @@ function replaceJournalDiff()
         $("#content").append("<div id='" + popupId + "'></div>");
         $("#" + popupId).html(data).dialog({
           title: "#" + journalIndice,
-          width: window.innerWidth / 2 - 20,
-          maxHeight: window.innerHeight - 80,
-          position: { my: "center center", at: "right center", of: window },
-          open: function () {
-            popupOffset = $("#" + popupId).offset();
+          width: window.innerWidth / 2 - 40,
+          maxHeight: window.innerHeight - 160,
+          create: function(event) {
+            $(event.target).dialog("widget").css({ "position": "fixed" });
           },
+          position: { my: "center center", at: "right center", of: window },
           close: function (event) {
             $(this).dialog('destroy');
             $(event.target).remove();
