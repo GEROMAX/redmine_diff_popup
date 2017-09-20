@@ -17,8 +17,8 @@ end
 Redmine::Plugin.register :redmine_diff_popup do
   name 'Redmine Diff Popup plugin'
   author 'Ryuta Tobita'
-  description 'This is a plugin for Redmine'
-  version '0.0.1'
+  description 'This plugin provide on pop-up show feature of diff.'
+  version '1.0.0'
   url 'https://github.com/GEROMAX/redmine_diff_popup'
   author_url 'https://github.com/GEROMAX'
 end
