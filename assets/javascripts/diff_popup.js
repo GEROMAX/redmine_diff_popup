@@ -30,9 +30,12 @@ function replaceJournalDiff()
           create: function(event) {
             $(event.target).dialog("widget").css({ "position": "fixed" });
           },
+          open: function() {
+            $(this).find("a").blur();
+          },
           position: { my: "center center", at: "right center", of: window },
           close: function (event) {
-            $(this).dialog('destroy');
+            $(this).dialog("destroy");
             $(event.target).remove();
           }
         }).show();
