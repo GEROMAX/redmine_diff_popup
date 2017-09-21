@@ -27,13 +27,13 @@ function replaceJournalDiff()
           title: "#" + journalIndice,
           width: window.innerWidth / 2 - 40,
           maxHeight: window.innerHeight - 160,
+          position: { my: "center center", at: "right center", of: window },
           create: function(event) {
             $(event.target).dialog("widget").css({ "position": "fixed" });
           },
           open: function() {
             $(this).find("a").blur();
           },
-          position: { my: "center center", at: "right center", of: window },
           close: function (event) {
             $(this).dialog("destroy");
             $(event.target).remove();
