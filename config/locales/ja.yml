@@ -1,0 +1,5 @@
+# Japanese strings go here for Rails i18n
+ja:
+  diff_popup_legend_add: "追加"
+  diff_popup_legend_remove: "削除"
+  field_enable_popup_journal_diff: "チケット履歴の差分をポップアップ表示する"

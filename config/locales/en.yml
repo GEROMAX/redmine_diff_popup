@@ -1,0 +1,5 @@
+# English strings go here for Rails i18n
+en:
+  diff_popup_legend_add: "Added"
+  diff_popup_legend_remove: "Removed"
+  field_enable_popup_journal_diff: "Enable popup show of issue's history diff"

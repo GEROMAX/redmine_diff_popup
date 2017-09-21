@@ -1,0 +1,7 @@
+<p><%= authoring @journal.created_on, @journal.user, :label => :label_updated_time_by %></p>
+<div style="text-align:right;">
+  <span class="diff_in"><%= l(:diff_popup_legend_add) %></span>&nbsp;<span class="diff_out"><%= l(:diff_popup_legend_remove) %></span>
+</div>
+<div class="text-diff">
+<%= simple_format_without_paragraph @diff.to_html %>
+</div>
