@@ -34,6 +34,9 @@ function replaceJournalDiff()
           open: function() {
             $(this).find("a").blur();
           },
+          resizeStart: function(event) {
+            $(event.target).dialog("option", "maxHeight", "");
+          },
           close: function (event) {
             $(this).dialog("destroy");
             $(event.target).remove();
