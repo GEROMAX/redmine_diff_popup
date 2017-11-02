@@ -9,7 +9,7 @@ ActionDispatch::Callbacks.to_prepare do
   end
   
   unless IssuesHelper.included_modules.include?(RedmineDiffPopup::Patches::IssuesHelperPatch)
-    IssuesHelper.send :prepend, RedmineDiffPopup::Patches::IssuesHelperPatch
+    IssuesHelper.send :include, RedmineDiffPopup::Patches::IssuesHelperPatch
   end
 end
 
