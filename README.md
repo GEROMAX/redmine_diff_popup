@@ -11,14 +11,15 @@ This plugin provide on pop-up show feature of diff.
 
 ## Compatibility
 
-Redmine 3.3 or 3.4 stable
+Redmine 3.2 or 3.3 or 3.4 stable
 
 Tested on:
+* 3.2.2
 * 3.3.3
 * 3.4.2
 
 ## Installation
 
 1. Follow the Redmine plugin installation steps at: http://www.redmine.org/wiki/redmine/Plugins
-2. Run the plugin migrations `rake redmine:plugins:migrate RAILS_ENV=production`
+2. Run the plugin migrations `bundle exec rake redmine:plugins:migrate RAILS_ENV=production`
 3. Restart your Redmine web server
