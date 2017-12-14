@@ -1,3 +1,4 @@
 <%= labelled_fields_for :pref, @user.pref do |pref_fields| %>
   <p><%= pref_fields.check_box :enable_popup_journal_diff %></p>
+  <p><%= pref_fields.check_box :enable_popup_wiki_diff %></p>
 <% end %>
