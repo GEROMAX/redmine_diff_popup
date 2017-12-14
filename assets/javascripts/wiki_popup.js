@@ -6,7 +6,7 @@ function replaceWikiSubmitButton()
   }
   else
   {
-    $("#content > form > input.small").replaceWith("button.wiki-popup").show();
+    $("#content > form > input.small").replaceWith($("button.wiki-popup")).show();
     alert("match:" + window.location);
   }
 
