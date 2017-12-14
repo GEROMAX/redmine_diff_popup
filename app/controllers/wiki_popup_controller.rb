@@ -20,6 +20,7 @@ private
     @wiki = @project.wiki
     render_404 unless @wiki
   rescue ActiveRecord::RecordNotFound
+    logger.info "record not found"
     render_404
   end
 
@@ -27,6 +28,7 @@ private
   def find_existing_page
     @page = @wiki.find_page(params[:id])
     if @page.nil?
+      logger.info "page not found"
       render_404
       return
     end
