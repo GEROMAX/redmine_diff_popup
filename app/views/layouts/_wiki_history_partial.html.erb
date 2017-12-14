@@ -2,7 +2,7 @@
 <%= content_for :header_tags do
   javascript_include_tag("wiki_popup", :plugin => "redmine_diff_popup")
 end %>
-<%= button_tag l(:label_view_diff), type: => 'button', :class => 'small wiki-popup', style: => 'display:none;' %>
+<%= button_tag l(:label_view_diff), :type => 'button', :class => 'small wiki-popup', :style => 'display:none;' %>
 <script>
   $(function () {
     replaceWikiSubmitButton();
