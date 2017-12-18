@@ -1,8 +1,0 @@
-<% if User.current.pref.enable_popup_wiki_diff == '1' %>
-<%= button_tag l(:label_view_diff), :type => 'button', :class => 'small wiki-popup', :style => 'display:none;' %>
-<script>
-  $(function () {
-    replaceWikiSubmitButton();
-  });
-</script>
-<% end %>

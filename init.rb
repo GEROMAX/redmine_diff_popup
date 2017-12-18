@@ -21,4 +21,5 @@ Redmine::Plugin.register :redmine_diff_popup do
   version '2.0.0'
   url 'https://github.com/GEROMAX/redmine_diff_popup'
   author_url 'https://github.com/GEROMAX'
+  permission :wiki_popup, {:wiki_popup => [:wiki_diff]}, :public => true
 end

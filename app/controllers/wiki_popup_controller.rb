@@ -1,12 +1,9 @@
 class WikiPopupController < ApplicationController
   unloadable
-  default_search_scope :wiki_pages
   before_action :find_wiki, :authorize
-  before_filter :find_existing_page, :only => [:wiki_diff]
-
+  before_action :find_existing_page, :only => [:wiki_diff]
+  
   layout false
-  # helper :issues
-  # helper :custom_fields
 
   def wiki_diff
     @diff = @page.diff(params[:version], params[:version_from])
@@ -20,7 +17,6 @@ private
     @wiki = @project.wiki
     render_404 unless @wiki
   rescue ActiveRecord::RecordNotFound
-    logger.info "record not found"
     render_404
   end
 
@@ -28,13 +24,20 @@ private
   def find_existing_page
     @page = @wiki.find_page(params[:id])
     if @page.nil?
-      logger.info "page not found"
       render_404
       return
     end
-    # if @wiki.page_found_with_redirect?
-    #   redirect_to_page @page
-    # end
+    if @wiki.page_found_with_redirect?
+      redirect_to_page @page
+    end
+  end
+
+  def redirect_to_page(page)
+    if page.project && page.project.visible?
+      redirect_to :action => action_name, :project_id => page.project, :id => page.title
+    else
+      render_404
+    end
   end
 
 end
