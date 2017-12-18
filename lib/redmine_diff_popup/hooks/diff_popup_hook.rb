@@ -23,7 +23,7 @@ class DiffPopupHook < Redmine::Hook::ViewListener
 
 private
   def is_wiki_history?(request)
-    request.original_url =~ Regexp.new('/projects/\S+/wiki/\S+/history$')
+    request.original_url =~ Regexp.new('/projects/\S+/wiki/\S+/history')
   end
   
 end
