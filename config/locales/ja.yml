@@ -3,3 +3,4 @@ ja:
   diff_popup_legend_add: "追加"
   diff_popup_legend_remove: "削除"
   field_enable_popup_journal_diff: "チケット履歴の差分をポップアップ表示する"
+  field_enable_popup_wiki_diff: "Wiki履歴の差分をポップアップ表示する"
