@@ -1,0 +1,21 @@
+<p class="wiki-popup-title" style="display:none;"><%= l(:label_history) %> <%= @diff.content_from.version %> - <%= @diff.content_to.version %></p>
+<div style="margin-top: 1em;margin-bottom: 1em;">
+<%= l(:label_version) %> <%= link_to @diff.content_from.version, :controller => "wiki", :action => 'show', :id => @page.title, :project_id => @page.project, :version => @diff.content_from.version %>
+<em>(<%= @diff.content_from.author ?
+             @diff.content_from.author.name : l(:label_user_anonymous)
+      %>, <%= format_time(@diff.content_from.updated_on) %>)</em>
+&#8594;
+<%= l(:label_version) %> <%= link_to @diff.content_to.version, :controller => "wiki", :action => 'show',
+                             :id => @page.title, :project_id => @page.project,
+                             :version => @diff.content_to.version
+                          %>/<%= @page.content.version %>
+<em>(<%= @diff.content_to.author ?
+             link_to_user(@diff.content_to.author.name) : l(:label_user_anonymous)
+      %>, <%= format_time(@diff.content_to.updated_on) %>)</em>
+  <div style="float:right;">
+    <span class="diff_in"><%= l(:diff_popup_legend_add) %></span>&nbsp;<span class="diff_out"><%= l(:diff_popup_legend_remove) %></span>
+  </div>
+</div>
+<div class="text-diff">
+<%= simple_format_without_paragraph @diff.to_html %>
+</div>

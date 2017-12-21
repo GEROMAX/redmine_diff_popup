@@ -7,6 +7,7 @@ This plugin provide on pop-up show feature of diff.
 ## Features
 
 * Add pop-up show feature on issue's history diff.
+* Add pop-up show feature on wiki's history diff.
 * Add switch of pop-up/default in user preferences.
 
 ## Compatibility
@@ -14,9 +15,10 @@ This plugin provide on pop-up show feature of diff.
 Redmine 3.2 or 3.3 or 3.4 stable
 
 Tested on:
+
 * 3.2.2
-* 3.3.3
-* 3.4.2
+* 3.3.0
+* 3.4.3
 
 ## Installation
 

@@ -1,0 +1,10 @@
+<% if User.current.pref.enable_popup_wiki_diff == '1' %>
+<%= hidden_field_tag 'project_id', @project.id %>
+<%= hidden_field_tag 'id', @page.title %>
+<%= button_tag l(:label_view_diff), :type => 'button', :class => 'small wiki-popup', :style => 'display:none;', :url => Redmine::Utils.relative_url_root + '/wiki_popup/wiki_diff?' %>
+<script>
+  $(function () {
+    replaceWikiSubmitButton();
+  });
+</script>
+<% end %>

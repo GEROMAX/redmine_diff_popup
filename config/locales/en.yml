@@ -3,3 +3,4 @@ en:
   diff_popup_legend_add: "Added"
   diff_popup_legend_remove: "Removed"
   field_enable_popup_journal_diff: "Enable popup show of issue's history diff"
+  field_enable_popup_wiki_diff: "Enable popup show of wiki's history diff"

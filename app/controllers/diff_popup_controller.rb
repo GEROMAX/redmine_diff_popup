@@ -25,7 +25,7 @@ class DiffPopupController < ApplicationController
     @diff = Redmine::Helpers::Diff.new(@detail.value, @detail.old_value)
   end
 
-  private
+private
 
   def find_journal
     @journal = Journal.visible.find(params[:id])
