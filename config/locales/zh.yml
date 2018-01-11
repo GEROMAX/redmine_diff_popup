@@ -1,0 +1,6 @@
+# Simplified Chinese strings go here for Rails i18n
+zh:
+  diff_popup_legend_add: "新增"
+  diff_popup_legend_remove: "移除"
+  field_enable_popup_journal_diff: "启用浮动窗口显示问题处理历史记录"
+  field_enable_popup_wiki_diff: "启用浮动浮动窗口显示WIKI历史记录"
