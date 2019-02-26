@@ -1,6 +1,6 @@
 function replaceWikiSubmitButton()
 {
-  $("button.wiki-popup, #project_id, #id").replaceAll($("#content > form > input.small")).filter("button.wiki-popup").show().on("click", function(){  
+  $("button.wiki-popup, #project_id, #id").replaceAll($("#content > form > p > input[type='submit']")).filter("button.wiki-popup").show().on("click", function(){
     //on top dialog
     var dlgName = "#diffpopup" + $("input[name='version_from']:checked").val() + "_" + $("input[name='version']:checked").val();
     if ($(dlgName).size() == 1)
