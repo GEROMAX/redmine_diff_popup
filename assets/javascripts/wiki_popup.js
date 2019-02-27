@@ -1,6 +1,7 @@
 function replaceWikiSubmitButton()
 {
-  $("button.wiki-popup, #project_id, #id").replaceAll($("#content > form > input.small")).filter("button.wiki-popup").show().on("click", function(){  
+  $("#project_id, #id").insertBefore("#content > form > table");
+  $("button.wiki-popup").replaceAll($("#content > form input[type='submit']")).filter("button.wiki-popup").show().on("click", function(){
     //on top dialog
     var dlgName = "#diffpopup" + $("input[name='version_from']:checked").val() + "_" + $("input[name='version']:checked").val();
     if ($(dlgName).size() == 1)
@@ -10,7 +11,7 @@ function replaceWikiSubmitButton()
     }
     
     //show dialog
-    var diffUrl = $(this).attr("url") + $(this).parent("form").serialize();
+    var diffUrl = $(this).attr("url") + $(this).parents("form").serialize();
     $.get(diffUrl, function (data) {
       var params = q_to_hash(decodeURIComponent(this.url).split("?")[1].split("&"));
       var popupId = "diffpopup" + params["version_from"] + "_" + params["version"];
