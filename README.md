@@ -12,13 +12,14 @@ This plugin provide on pop-up show feature of diff.
 
 ## Compatibility
 
-Redmine 3.2 or 3.3 or 3.4 stable
+Redmine 3.2 or 3.3 or 3.4 or 4.0 stable
 
 Tested on:
 
 * 3.2.2
 * 3.3.0
-* 3.4.3
+* 3.4.8
+* 4.0.1
 
 ## Installation
 
