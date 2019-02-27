@@ -11,7 +11,7 @@ function replaceWikiSubmitButton()
     }
     
     //show dialog
-    var diffUrl = $(this).attr("url") + $(this).parent("form").serialize();
+    var diffUrl = $(this).attr("url") + $(this).parents("form").serialize();
     $.get(diffUrl, function (data) {
       var params = q_to_hash(decodeURIComponent(this.url).split("?")[1].split("&"));
       var popupId = "diffpopup" + params["version_from"] + "_" + params["version"];
