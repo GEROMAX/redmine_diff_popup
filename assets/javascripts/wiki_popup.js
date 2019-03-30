@@ -1,7 +1,6 @@
 function replaceWikiSubmitButton()
 {
-  $("#project_id, #id").insertBefore("#content > form > table");
-  $("button.wiki-popup").replaceAll($("#content > form input[type='submit']")).filter("button.wiki-popup").show().on("click", function(){
+  $("button.wiki-popup, #project_id, #id").replaceAll($("#content > form > input.small")).filter("button.wiki-popup").show().on("click", function(){  
     //on top dialog
     var dlgName = "#diffpopup" + $("input[name='version_from']:checked").val() + "_" + $("input[name='version']:checked").val();
     if ($(dlgName).size() == 1)
@@ -9,17 +8,22 @@ function replaceWikiSubmitButton()
       $(dlgName).dialog("moveToTop");
       return false;
     }
-    
+
     //show dialog
-    var diffUrl = $(this).attr("url") + $(this).parents("form").serialize();
+    var diffUrl = $(this).attr("url") + $(this).parent("form").serialize();
     $.get(diffUrl, function (data) {
       var params = q_to_hash(decodeURIComponent(this.url).split("?")[1].split("&"));
       var popupId = "diffpopup" + params["version_from"] + "_" + params["version"];
       $("#content").append("<div id='" + popupId + "'></div>");
       $("#" + popupId).html(data).dialog({
         title: $("#" + popupId).find("p.wiki-popup-title").text(),
-        width: window.innerWidth / 2 - 40,
-        maxHeight: window.innerHeight - 160,
+        //change start,tplink,guishaoli
+        // 修改对话框初始大小
+        width: window.innerWidth  - 80,
+        maxHeight: window.innerHeight - 100,
+        // 改为模态覆盖页面，让背景置灰
+        modal: true,
+        // change end
         position: { my: "center center", at: "right center", of: window },
         create: function(event) {
           $(event.target).dialog("widget").css({ "position": "fixed" });

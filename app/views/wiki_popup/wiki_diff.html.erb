@@ -16,6 +16,58 @@
     <span class="diff_in"><%= l(:diff_popup_legend_add) %></span>&nbsp;<span class="diff_out"><%= l(:diff_popup_legend_remove) %></span>
   </div>
 </div>
-<div class="text-diff">
-<%= simple_format_without_paragraph @diff.to_html %>
+<div>
+  <!-- change start,tplink,guishaoli -->
+  <!--添加 “变更前” “变更后”描述栏 -->
+<span style="width: 50%;display: inline-block;;text-align: center;"> <%= l(:before_change) %>  </span>
+<span style="width: 50%;float: right;text-align: center;"> <%= l(:after_change)  %>  </span>
 </div>
+<div class="text-diff" style="height: -webkit-fill-available;">
+  <!-- 注释原生的diff内容 -->
+<% simple_format_without_paragraph @diff.to_html %>
+    <div id="left"  style="width: 48%;
+            position: absolute;
+            overflow-x: scroll;
+            ">
+
+    <%=  @left %>
+    </div>
+    <div id="right" style="width: 48%;
+            position: absolute;
+            left: 52%;
+            overflow-x: scroll;
+            ">
+    <%= @right  %>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+// 对特殊字符转义，让浏览器解析html标签
+function unescapeHTML(sqlstring){
+    sqlstring = "" + sqlstring;
+    return sqlstring.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&apos;/g, "'");
+}
+var rdata =$("#right").html()
+
+$("#right").html(unescapeHTML(rdata))
+
+var ldata = $("#left").html()
+
+$("#left").html(unescapeHTML(ldata))
+
+</script>
+<style type="text/css">
+/* 自定义变更内容样式 */
+.diff_in{
+ background: #cfc;
+    border: solid;
+    border-color: #cfc;
+}
+.diff_out{
+     background: #fcc;
+    border: solid;
+    border-color: #fcc;
+}
+</style>
+<!-- change end -->

@@ -1,8 +1,12 @@
-# Redmine Diff Popup
+# Redmine Diff Popup (Nice)
 
 This plugin provide on pop-up show feature of diff.
 
 * http://www.redmine.org/plugins/redmine_diff_popup
+
+This plugin will show you nice diff
+![avatar](https://raw.githubusercontent.com/Guiqifeitian/redmine_diff_popup/master/example.PNG)
+![avatar](https://raw.githubusercontent.com/Guiqifeitian/redmine_diff_popup/master/example2.PNG)
 
 ## Features
 
